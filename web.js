@@ -42,4 +42,9 @@ addon.webhook('room_message', /^\/time$/, function *() {
   if (hours > 0) s = hours + hour + s;
   yield this.roomClient.sendNotification(s);
 }); 
+
+addon.webhook('room_message', /^\/john$/, function *() {
+  yield this.roomClient.sendNotification("lag");
+}); 
+
 app.listen();
