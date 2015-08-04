@@ -14,13 +14,14 @@
   "scripts": {
     "web": "node --harmony web.js",
     "web-dev": "nodemon --harmony -e js,json,css,hbs web.js",
-    "tunnel": "ngrok http 3000"
+    "tunnel": "ngrok http --subdomain=smashbot 3000"
   },
   "development": {
+    "localBaseUrl": "https://smashbot.ngrok.io",
     "port": 3000
   },
   "production": {
-    "localBaseUrl": "https://my-addon.anypaas.com",
+    "localBaseUrl": "https://smashbot.ngrok.io",
     "redisEnv": "REDISCLOUD_URL",
     "port": "$PORT"
   },
