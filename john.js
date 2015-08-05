@@ -1,8 +1,9 @@
 var prep = [
   "I lost because",
   "I only lost because",
-  "He won because",
-  "He only won because"
+  "They won because",
+  "They only won because",
+  "Chris only won because"
 ]
 
 var subjects = [
@@ -53,7 +54,8 @@ var subjects = [
   "I was",
   "PAC-MAN was",
   "Alex Strife is",
-  "my scarf is"
+  "my scarf is",
+  "Ganon is"
   ];
 
   var problems = [
@@ -139,7 +141,8 @@ var subjects = [
     "using counters too much",
     "spamming PK Fire",
     "my b",
-    "really hard to remember"
+    "really hard to remember",
+    "a troll (troll)"
     ];
 
     function getRandInt(min, max) {
@@ -148,10 +151,10 @@ var subjects = [
 
 function generate() {
   var finalPrep = prep[getRandInt(0,prep.length-1)]
-    var finalSubject = subjects[getRandInt(0,subjects.length-1)]
-    var finalProblem = problems[getRandInt(0,problems.length-1)]
+  var finalSubject = subjects[getRandInt(0,subjects.length-1)]
+  var finalProblem = problems[getRandInt(0,problems.length-1)]
 
-    var rand1 = Math.random();
+  var rand1 = Math.random();
   var rand2 = Math.random();
 
   return finalPrep + " " + finalSubject + " " +  finalProblem + ".";
