@@ -2,6 +2,7 @@ var ack = require('ac-koa').require('hipchat');
 var pkg = require('./package.json');
 var app = ack(pkg);
 var time = require('./time.js');
+var john = require('./john.js');
 
 var addon = app.addon()
   .hipchat()
@@ -17,7 +18,7 @@ addon.webhook('room_message', /^\/time$/, function *() {
 }); 
 
 addon.webhook('room_message', /^\/john$/, function *() {
-  yield this.roomClient.sendNotification("lag");
+  yield this.roomClient.sendNotification(john.getRandomJohn());
 }); 
 
 app.listen();
