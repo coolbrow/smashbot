@@ -1,5 +1,5 @@
 var morningTime = getTime(18, 0).getTime();
-var afternoonTime = getTime(22, 3).getTime();
+var afternoonTime = getTime(22, 30).getTime();
 
 function convertDate(date) {
 	return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()));
