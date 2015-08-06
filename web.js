@@ -1,8 +1,7 @@
 var ack = require('ac-koa').require('hipchat');
 var pkg = require('./package.json');
 var app = ack(pkg);
-var time = require('./time.js');
-var john = require('./john.js');
+var commander = require('./lib/commander');
 
 var addon = app.addon()
   .hipchat()
@@ -13,12 +12,8 @@ if (process.env.DEV_KEY) {
   addon.key(process.env.DEV_KEY);
 }
 
-addon.webhook('room_message', /^\/time$/, function *() {
-  yield this.roomClient.sendNotification(time.getTimeUntilSmash());
-}); 
-
-addon.webhook('room_message', /^\/john$/, function *() {
-  yield this.roomClient.sendNotification(john.getRandomJohn());
+addon.webhook('room_message', commander.pattern, function *() {
+  yield commander.onCommand;
 }); 
 
 app.listen();
