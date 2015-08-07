@@ -1,7 +1,8 @@
+var commander = require('./lib/commander');
+
 var ack = require('ac-koa').require('hipchat');
 var pkg = require('./package.json');
 var app = ack(pkg);
-var commander = require('./lib/commander');
 
 var addon = app.addon()
   .hipchat()
